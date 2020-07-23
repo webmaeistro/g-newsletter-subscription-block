@@ -1,0 +1,79 @@
+$color-white: rgba(255,255,255,1);
+$color-75-black: rgba(31,32,65,0.250);
+$color-50-black: rgba(31,32,65,0.750);
+$color-black: rgba(31,32,65,1);
+@mixin font-h-2 {
+	font-size:19px;
+	font-family:"Luckiest Guy";
+	font-weight:normal;
+}
+@mixin font-body {
+	font-size:14px;
+	font-family:"Pioneer 10";
+	font-weight:normal;
+	line-height:24px;
+}
+@mixin font-input-text {
+	font-size:14px;
+	font-family:"Montserrat";
+	font-weight:normal;
+	line-height:24px;
+}
+@mixin font-button-style-text {
+	font-size:18px;
+	font-family:"Thunder Lord";
+	font-weight:normal;
+}
+.wp-block-button__link {
+	color: $white;
+	background-color: $dark-gray-700;
+	border: none;
+	border-radius: $blocks-button__height / 2;
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-block;
+  font-size:18px;
+	font-family:"Thunder Lord";
+	font-weight:normal;
+	padding: 12px 24px;
+	text-align: center;
+	text-decoration: none;
+	overflow-wrap: break-word;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited {
+		color: $white;
+	}
+
+	&.aligncenter {
+		text-align: center;
+	}
+
+	&.alignright {
+		/*rtl:ignore*/
+		text-align: right;
+	}
+}
+
+// the first selector is required for old buttons markup
+.wp-block-button.is-style-squared,
+.wp-block-button__link.wp-block-button.is-style-squared {
+	border-radius: 0;
+}
+
+
+// the first selector is required for old buttons markup
+
+.wp-block-button.no-border-radius,
+.wp-block-button__link.no-border-radius {
+	border-radius: 0 !important;
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link,
+.wp-block-button__link.is-style-outline {
+	color: $dark-gray-700;
+	background-color: transparent;
+	border: 2px solid;
+}
