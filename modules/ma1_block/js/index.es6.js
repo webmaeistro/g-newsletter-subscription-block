@@ -1,9 +1,25 @@
+/* eslint-disable no-unused-vars */
 const { blocks, data, element, components, editor } = wp;
 const { registerBlockType } = blocks;
 const { dispatch, select } = data;
 const { Fragment } = element;
-const { PanelBody, BaseControl, Icon, RangeControl, IconButton, Toolbar, SelectControl } = components;
-const { InnerBlocks, RichText, InspectorControls, PanelColorSettings, MediaUpload, BlockControls } = editor;
+const {
+  PanelBody,
+  BaseControl,
+  Icon,
+  RangeControl,
+  IconButton,
+  Toolbar,
+  SelectControl,
+} = components;
+const {
+  InnerBlocks,
+  RichText,
+  InspectorControls,
+  PanelColorSettings,
+  MediaUpload,
+  BlockControls,
+} = editor;
 const __ = Drupal.t;
 
 const settings = {
@@ -75,14 +91,14 @@ const settings = {
             </div>
             {isSelected && (
               <div className="info">
-                <p>This is Gutenberg's ma1 block.</p>
-                <p>To test it just fill the "fields" on the left and save.</p>
+                <p>This is Gutenbergs ma1 block</p>
+                <p>To test it just fill the fields on the left and save.</p>
               </div>
             )}
           </div>
         </div>
         <InspectorControls>
-          <PanelBody title={ __('Block Settings') }>
+          <PanelBody title={__('Block Settings')}>
             <div>{title}</div>
           </PanelBody>
         </InspectorControls>
@@ -96,15 +112,9 @@ const settings = {
     return (
       <div className={className}>
         <div className="column">
-          {title && (
-            <h2>{title}</h2>
-          )}
-          {subtitle && (
-            <div>{subtitle}</div>
-          )}
-          {text && (
-            <p>{text}</p>
-          )}
+          {title && <h2>{title}</h2>}
+          {subtitle && <div>{subtitle}</div>}
+          {text && <p>{text}</p>}
         </div>
         <div className="column">
           <div className="icon">
@@ -121,7 +131,12 @@ const category = {
   title: __('ma1s'),
 };
 
-const currentCategories = select('core/blocks').getCategories().filter(item => item.slug !== category.slug);
-dispatch('core/blocks').setCategories([ category, ...currentCategories ]);
+const currentCategories = select('core/blocks')
+  .getCategories()
+  .filter(item => item.slug !== category.slug);
+dispatch('core/blocks').setCategories([category, ...currentCategories]);
 
-registerBlockType(`${category.slug}/ma1-block`, { category: category.slug, ...settings });
+registerBlockType(`${category.slug}/ma1-block`, {
+  category: category.slug,
+  ...settings,
+});
