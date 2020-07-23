@@ -130,12 +130,12 @@ var settings = {
             React.createElement(
               'p',
               null,
-              'This is Gutenberg\'s ma1 block.'
+              'This is Gutenbergs ma1 block'
             ),
             React.createElement(
               'p',
               null,
-              'To test it just fill the "fields" on the left and save.'
+              'To test it just fill the fields on the left and save.'
             )
           )
         )
@@ -208,4 +208,6 @@ var currentCategories = select('core/blocks').getCategories().filter(function (i
 });
 dispatch('core/blocks').setCategories([category].concat(_toConsumableArray(currentCategories)));
 
-registerBlockType(category.slug + '/ma1-block', _extends({ category: category.slug }, settings));
+registerBlockType(category.slug + '/ma1-block', _extends({
+  category: category.slug
+}, settings));
