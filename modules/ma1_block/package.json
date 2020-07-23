@@ -1,0 +1,18 @@
+{
+  "name": "ma1_block",
+  "version": "0.1.0",
+  "private": false,
+  "description": "",
+  "author": "Martin Andersen <marander@pm.me>  (@webmaeistro)",
+  "main": "js/index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/drupal-js-build watch --css",
+    "build": "./node_modules/.bin/drupal-gutenberg-translations && ./node_modules/.bin/drupal-js-build --css"
+  },
+ 
+  "license": "ISC",
+  "devDependencies": {
+    "drupal-js-build": "^1.1.1",
+    "drupal-gutenberg-translations": "^1.0.2"
+  }
+}
